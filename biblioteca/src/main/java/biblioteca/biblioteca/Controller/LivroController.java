@@ -47,10 +47,17 @@ public class LivroController {
     }
     
     @GetMapping("/{isbn}")
-    public ResponseEntity<LivroResponseDto> buscarLivro(@RequestParam Long isbn) {
+    public ResponseEntity<LivroResponseDto> buscarLivroISBN(@PathVariable Long isbn) {
         return ResponseEntity
         .status(HttpStatus.OK)
-        .body(livroCrudService.buscarLivro(isbn));
+        .body(livroCrudService.buscarLivroISBN(isbn));
+    }
+
+    @GetMapping("/titulo")
+    public ResponseEntity<List<LivroResponseDto>> buscarLivroTitulo(@RequestParam String titulo) {
+        return ResponseEntity
+        .status(HttpStatus.OK)
+        .body(livroCrudService.buscarLivroTitulo(titulo));
     }
     
     @PutMapping("/{isbn}")

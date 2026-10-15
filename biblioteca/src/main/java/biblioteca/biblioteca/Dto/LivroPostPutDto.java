@@ -3,6 +3,7 @@ package biblioteca.biblioteca.Dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class LivroPostPutDto {
     
     @JsonProperty("isbn")
-    @NotBlank(message = "ISBN não encontrado")
+    @NotNull(message = "ISBN não encontrado")
     private Long isbn;
 
     @JsonProperty("titulo")
@@ -27,7 +28,7 @@ public class LivroPostPutDto {
     private String ano;
 
     @JsonProperty("autor")
-    @NotBlank(message = "Autor não encontrado")
+    @NotNull(message = "Autor não encontrado")
     private Long autor;
 
     @JsonProperty("edicao")

@@ -23,10 +23,9 @@ public class Livro {
     @JsonProperty("titulo")
     private String titulo;
 
-    @Column(name = "autor")
-    @JsonProperty("autor")
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_autor", nullable = false)
+    @JsonProperty("autor")
     private Autor autor;
 
     @Column(name = "ano")

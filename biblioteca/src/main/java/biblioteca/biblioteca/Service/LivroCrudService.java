@@ -4,7 +4,6 @@ import java.util.List;
 
 import biblioteca.biblioteca.Dto.LivroPostPutDto;
 import biblioteca.biblioteca.Dto.LivroResponseDto;
-import jakarta.validation.Valid;
 
 public interface LivroCrudService {
 
@@ -12,10 +11,13 @@ public interface LivroCrudService {
 
     List<LivroResponseDto> buscarTodosLivros();
 
-    LivroResponseDto buscarLivro(Long isbn);
+    LivroResponseDto buscarLivroISBN(Long isbn);
+
+    List<LivroResponseDto> buscarLivroTitulo(String titulo);
 
     LivroResponseDto atualizarLivro(Long isbn, LivroPostPutDto livroPostPutDto);
 
     void removerLivro(Long isbn);
+
     
 }
